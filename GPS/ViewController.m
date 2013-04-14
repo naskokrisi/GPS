@@ -36,6 +36,7 @@
         [self makePin];
     }
     else if (isPushed == YES) {
+        _trackColor ++;
         isPushed = NO;
         _stopLocation = [[mapView userLocation] location];
         _isRecording = NO;
@@ -139,11 +140,32 @@
     
     
     MKPolylineView  * _routeLineView = [[[MKPolylineView alloc] initWithPolyline:_routeLine] autorelease];
+    if(_trackColor == 1) {
     _routeLineView.fillColor = [UIColor blueColor];
     _routeLineView.strokeColor = [UIColor blueColor];
     _routeLineView.lineWidth = 5;
     _routeLineView.lineCap = kCGLineCapSquare;
+    }
+    else if (_trackColor == 2) {
+        _routeLineView.fillColor = [UIColor redColor];
+        _routeLineView.strokeColor = [UIColor redColor];
+        _routeLineView.lineWidth = 5;
+        _routeLineView.lineCap = kCGLineCapSquare;
+    }
     
+    else if (_trackColor == 3) {
+        _routeLineView.fillColor = [UIColor greenColor];
+        _routeLineView.strokeColor = [UIColor greenColor];
+        _routeLineView.lineWidth = 5;
+        _routeLineView.lineCap = kCGLineCapSquare;
+    }
+    else {
+        _routeLineView.fillColor = [UIColor purpleColor];
+        _routeLineView.strokeColor = [UIColor purpleColor];
+        _routeLineView.lineWidth = 5;
+        _routeLineView.lineCap = kCGLineCapSquare;
+        _trackColor ++;
+    }
     
     overlayView = _routeLineView;
     
@@ -155,6 +177,7 @@
 {
     
     [super viewDidLoad];
+    _trackColor = 0;
     isPushed = FALSE;
     _isRecording = NO;
     location = TRUE;

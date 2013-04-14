@@ -54,7 +54,7 @@
                                                 <action selector="startTrack:" destination="2" id="kNn-kW-fee"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Track" id="wED-m2-sCR">
+                                        <barButtonItem key="rightBarButtonItem" title="Tracks" id="wED-m2-sCR">
                                             <connections>
                                                 <segue destination="nhf-Hs-AVC" kind="modal" id="jY5-MB-4Du"/>
                                             </connections>

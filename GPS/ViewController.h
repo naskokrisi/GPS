@@ -14,6 +14,7 @@
 
 @interface ViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>{
     CLLocationManager *locationManager;
+    int _trackColor;
     bool location;
     bool isPushed;
     double longitude;
