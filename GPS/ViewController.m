@@ -25,28 +25,21 @@
 }
 
 -(IBAction)startTrack:(UIBarButtonItem*)sender {
-    
-    if (mapView.showsUserLocation == NO) {
-        
-        UIAlertView *alert = [[ UIAlertView alloc] initWithTitle:nil message:@"Please turn on your location" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alert show];
-        [alert autorelease];
-        
-        
-    }
-    else if (isPushed == FALSE) {
-        isPushed = TRUE;
+    mapView.showsUserLocation = YES;
+
+    if (isPushed == NO) {
+        isPushed = YES;
         [sender setTitle:@"Stop Track"];
         _startLocation = [[mapView userLocation] location];
         _isRecording = YES;
-        //[button setTitle:@"Stop Track" forState:UIControlStateNormal];
         
         [self makePin];
     }
-    else if (isPushed == TRUE) {
-        isPushed = FALSE;
+    else if (isPushed == YES) {
+        isPushed = NO;
         _stopLocation = [[mapView userLocation] location];
         _isRecording = NO;
+        [self makePin];
         [sender setTitle:@"Start Track"];
     }
 }
@@ -54,14 +47,11 @@
 -(IBAction)myLocation:(id)sender {
     mapView.showsUserLocation = YES;
     [mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
-    if (location == TRUE) {
-    UIAlertView *alert = [[ UIAlertView alloc] initWithTitle:nil message:@"Location is ON" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-    [alert show];
-    [alert autorelease];
-    location = FALSE;
+    if (location == YES) {
+    location = NO;
     }
 }
-
+/*
 -(IBAction)getLocation {
     if(location == FALSE) {
     mapView.showsUserLocation = NO;
@@ -78,7 +68,7 @@
             location = FALSE;
     }
 }
-
+*/
 -(IBAction)setMap:(id)sender {
     switch (((UISegmentedControl *) sender).selectedSegmentIndex)
     {
@@ -122,7 +112,7 @@
     
     _routeLine = [MKPolyline polylineWithPoints:_pointsArray count:2];
     
-    [mapView addOverlay:_routeLine];  //MkMapView declared in .h
+    [mapView addOverlay:_routeLine];  
 }
 
 - (void)locationManager:(CLLocationManager *)manager
@@ -151,7 +141,7 @@
     MKPolylineView  * _routeLineView = [[[MKPolylineView alloc] initWithPolyline:_routeLine] autorelease];
     _routeLineView.fillColor = [UIColor blueColor];
     _routeLineView.strokeColor = [UIColor blueColor];
-    _routeLineView.lineWidth = 15;
+    _routeLineView.lineWidth = 5;
     _routeLineView.lineCap = kCGLineCapSquare;
     
     
@@ -172,7 +162,6 @@
     mapView.delegate = self;
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
-    //locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
     [locationManager startUpdatingLocation];
     _pointsArray = malloc(sizeof(CLLocationCoordinate2D)*2);
     

@@ -14,14 +14,16 @@
 		7735D67D16E23F4600B5725E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7735D67B16E23F4600B5725E /* InfoPlist.strings */; };
 		7735D67F16E23F4600B5725E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7735D67E16E23F4600B5725E /* main.m */; };
 		7735D68316E23F4600B5725E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7735D68216E23F4600B5725E /* AppDelegate.m */; };
-		7735D68516E23F4600B5725E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7735D68416E23F4600B5725E /* Default.png */; };
-		7735D68716E23F4600B5725E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7735D68616E23F4600B5725E /* Default@2x.png */; };
-		7735D68916E23F4600B5725E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7735D68816E23F4600B5725E /* Default-568h@2x.png */; };
 		7735D68C16E23F4600B5725E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7735D68A16E23F4600B5725E /* MainStoryboard.storyboard */; };
 		7735D68F16E23F4600B5725E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7735D68E16E23F4600B5725E /* ViewController.m */; };
 		7735D69616E24B0800B5725E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7735D69516E24B0800B5725E /* MapKit.framework */; };
 		776CBADA16E4CB0C007C19CF /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 776CBAD916E4CB0C007C19CF /* ViewController1.m */; };
-		779159D51719EDA300F94636 /* logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 779159D41719EDA300F94636 /* logo1.png */; };
+		778FD045171B3FEF00DE43AA /* logo7.png in Resources */ = {isa = PBXBuildFile; fileRef = 778FD044171B3FEF00DE43AA /* logo7.png */; };
+		778FD047171B44CC00DE43AA /* map_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 778FD046171B44CC00DE43AA /* map_pin.png */; };
+		778FD049171B458200DE43AA /* reticle.png in Resources */ = {isa = PBXBuildFile; fileRef = 778FD048171B458100DE43AA /* reticle.png */; };
+		778FD04B171B49B900DE43AA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 778FD04A171B49B900DE43AA /* Default-568h@2x.png */; };
+		7792B20F171B38730080F993 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7792B20E171B38730080F993 /* Default.png */; };
+		7792B211171B38870080F993 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7792B210171B38870080F993 /* Default@2x.png */; };
 		77AC345816EB3B21003AF842 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77AC345716EB3B21003AF842 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,26 +43,28 @@
 /* Begin PBXFileReference section */
 		7703AA141718ABD600B3EC91 /* PinClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PinClass.h; path = ../PinClass.h; sourceTree = "<group>"; };
 		7703AA151718ABD600B3EC91 /* PinClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PinClass.m; path = ../PinClass.m; sourceTree = "<group>"; };
-		7735D66F16E23F4500B5725E /* World MapTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "World MapTest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7735D66F16E23F4500B5725E /* World Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "World Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7735D67216E23F4500B5725E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7735D67416E23F4500B5725E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7735D67616E23F4500B5725E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		7735D67A16E23F4500B5725E /* World MapTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "World MapTest-Info.plist"; sourceTree = "<group>"; };
+		7735D67A16E23F4500B5725E /* World Map-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "World Map-Info.plist"; sourceTree = "<group>"; };
 		7735D67C16E23F4600B5725E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7735D67E16E23F4600B5725E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7735D68016E23F4600B5725E /* World MapTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "World MapTest-Prefix.pch"; sourceTree = "<group>"; };
+		7735D68016E23F4600B5725E /* World Map-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "World Map-Prefix.pch"; sourceTree = "<group>"; };
 		7735D68116E23F4600B5725E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7735D68216E23F4600B5725E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7735D68416E23F4600B5725E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		7735D68616E23F4600B5725E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		7735D68816E23F4600B5725E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		7735D68B16E23F4600B5725E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		7735D68D16E23F4600B5725E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		7735D68E16E23F4600B5725E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7735D69516E24B0800B5725E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		776CBAD816E4CB0C007C19CF /* ViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController1.h; sourceTree = "<group>"; };
 		776CBAD916E4CB0C007C19CF /* ViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController1.m; sourceTree = "<group>"; };
-		779159D41719EDA300F94636 /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo1.png; sourceTree = "<group>"; };
+		778FD044171B3FEF00DE43AA /* logo7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo7.png; path = ../logo7.png; sourceTree = "<group>"; };
+		778FD046171B44CC00DE43AA /* map_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map_pin.png; path = "../../MapKit-Route-Directions-master/map_pin.png"; sourceTree = "<group>"; };
+		778FD048171B458100DE43AA /* reticle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reticle.png; path = "../../MapKit-Route-Directions-master/reticle.png"; sourceTree = "<group>"; };
+		778FD04A171B49B900DE43AA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		7792B20E171B38730080F993 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		7792B210171B38870080F993 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		77AC345716EB3B21003AF842 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -83,7 +87,6 @@
 		7735D66616E23F4500B5725E = {
 			isa = PBXGroup;
 			children = (
-				779159D41719EDA300F94636 /* logo1.png */,
 				7735D67816E23F4500B5725E /* GPS */,
 				7735D67116E23F4500B5725E /* Frameworks */,
 				7735D67016E23F4500B5725E /* Products */,
@@ -93,7 +96,7 @@
 		7735D67016E23F4500B5725E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7735D66F16E23F4500B5725E /* World MapTest.app */,
+				7735D66F16E23F4500B5725E /* World Map.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,13 +133,16 @@
 		7735D67916E23F4500B5725E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7735D67A16E23F4500B5725E /* World MapTest-Info.plist */,
+				778FD04A171B49B900DE43AA /* Default-568h@2x.png */,
+				7792B210171B38870080F993 /* Default@2x.png */,
+				7792B20E171B38730080F993 /* Default.png */,
+				778FD044171B3FEF00DE43AA /* logo7.png */,
+				778FD046171B44CC00DE43AA /* map_pin.png */,
+				778FD048171B458100DE43AA /* reticle.png */,
+				7735D67A16E23F4500B5725E /* World Map-Info.plist */,
 				7735D67B16E23F4600B5725E /* InfoPlist.strings */,
 				7735D67E16E23F4600B5725E /* main.m */,
-				7735D68016E23F4600B5725E /* World MapTest-Prefix.pch */,
-				7735D68416E23F4600B5725E /* Default.png */,
-				7735D68616E23F4600B5725E /* Default@2x.png */,
-				7735D68816E23F4600B5725E /* Default-568h@2x.png */,
+				7735D68016E23F4600B5725E /* World Map-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -144,9 +150,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7735D66E16E23F4500B5725E /* World MapTest */ = {
+		7735D66E16E23F4500B5725E /* World Map */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7735D69216E23F4600B5725E /* Build configuration list for PBXNativeTarget "World MapTest" */;
+			buildConfigurationList = 7735D69216E23F4600B5725E /* Build configuration list for PBXNativeTarget "World Map" */;
 			buildPhases = (
 				7735D66B16E23F4500B5725E /* Sources */,
 				7735D66C16E23F4500B5725E /* Frameworks */,
@@ -157,9 +163,9 @@
 			);
 			dependencies = (
 			);
-			name = "World MapTest";
+			name = "World Map";
 			productName = GPS;
-			productReference = 7735D66F16E23F4500B5725E /* World MapTest.app */;
+			productReference = 7735D66F16E23F4500B5725E /* World Map.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -171,7 +177,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Nasko;
 			};
-			buildConfigurationList = 7735D66A16E23F4500B5725E /* Build configuration list for PBXProject "World MapTest" */;
+			buildConfigurationList = 7735D66A16E23F4500B5725E /* Build configuration list for PBXProject "World Map" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -183,7 +189,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7735D66E16E23F4500B5725E /* World MapTest */,
+				7735D66E16E23F4500B5725E /* World Map */,
 			);
 		};
 /* End PBXProject section */
@@ -194,11 +200,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7735D67D16E23F4600B5725E /* InfoPlist.strings in Resources */,
-				7735D68516E23F4600B5725E /* Default.png in Resources */,
-				7735D68716E23F4600B5725E /* Default@2x.png in Resources */,
-				7735D68916E23F4600B5725E /* Default-568h@2x.png in Resources */,
 				7735D68C16E23F4600B5725E /* MainStoryboard.storyboard in Resources */,
-				779159D51719EDA300F94636 /* logo1.png in Resources */,
+				7792B20F171B38730080F993 /* Default.png in Resources */,
+				7792B211171B38870080F993 /* Default@2x.png in Resources */,
+				778FD045171B3FEF00DE43AA /* logo7.png in Resources */,
+				778FD047171B44CC00DE43AA /* map_pin.png in Resources */,
+				778FD049171B458200DE43AA /* reticle.png in Resources */,
+				778FD04B171B49B900DE43AA /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,10 +305,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GPS/World MapTest-Prefix.pch";
-				INFOPLIST_FILE = "GPS/World MapTest-Info.plist";
+				GCC_PREFIX_HEADER = "GPS/World Map-Prefix.pch";
+				INFOPLIST_FILE = "GPS/World Map-Info.plist";
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = "World MapTest";
+				PRODUCT_NAME = "World Map";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -310,9 +319,10 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GPS/World MapTest-Prefix.pch";
-				INFOPLIST_FILE = "GPS/World MapTest-Info.plist";
-				PRODUCT_NAME = "World MapTest";
+				GCC_PREFIX_HEADER = "GPS/World Map-Prefix.pch";
+				INFOPLIST_FILE = "GPS/World Map-Info.plist";
+				PRODUCT_NAME = "World Map";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -320,7 +330,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7735D66A16E23F4500B5725E /* Build configuration list for PBXProject "World MapTest" */ = {
+		7735D66A16E23F4500B5725E /* Build configuration list for PBXProject "World Map" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7735D69016E23F4600B5725E /* Debug */,
@@ -329,7 +339,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7735D69216E23F4600B5725E /* Build configuration list for PBXNativeTarget "World MapTest" */ = {
+		7735D69216E23F4600B5725E /* Build configuration list for PBXNativeTarget "World Map" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7735D69316E23F4600B5725E /* Debug */,

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:World MapTest.xcodeproj">
+      location = "self:World Map.xcodeproj">
    </FileRef>
 </Workspace>

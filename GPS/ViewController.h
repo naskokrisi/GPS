@@ -33,7 +33,7 @@
 
 -(IBAction)startTrack:(id)sender;
 -(IBAction)myLocation:(id)sender;
--(IBAction)getLocation;
+//-(IBAction)getLocation;
 -(IBAction)setMap:(id)sender;
 -(IBAction)pinDrop;
 @end
