@@ -12,7 +12,7 @@
 #import <MapKit/MKReverseGeocoder.h>
 
 
-@interface ViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>{
+@interface MapViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, MKAnnotation>{
     CLLocationManager *locationManager;
     int _trackColor;
     bool location;

@@ -15,9 +15,9 @@
 		7735D67F16E23F4600B5725E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7735D67E16E23F4600B5725E /* main.m */; };
 		7735D68316E23F4600B5725E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7735D68216E23F4600B5725E /* AppDelegate.m */; };
 		7735D68C16E23F4600B5725E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7735D68A16E23F4600B5725E /* MainStoryboard.storyboard */; };
-		7735D68F16E23F4600B5725E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7735D68E16E23F4600B5725E /* ViewController.m */; };
+		7735D68F16E23F4600B5725E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7735D68E16E23F4600B5725E /* MapViewController.m */; };
 		7735D69616E24B0800B5725E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7735D69516E24B0800B5725E /* MapKit.framework */; };
-		776CBADA16E4CB0C007C19CF /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 776CBAD916E4CB0C007C19CF /* ViewController1.m */; };
+		776CBADA16E4CB0C007C19CF /* TrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 776CBAD916E4CB0C007C19CF /* TrackViewController.m */; };
 		778FD045171B3FEF00DE43AA /* logo7.png in Resources */ = {isa = PBXBuildFile; fileRef = 778FD044171B3FEF00DE43AA /* logo7.png */; };
 		778FD047171B44CC00DE43AA /* map_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 778FD046171B44CC00DE43AA /* map_pin.png */; };
 		778FD049171B458200DE43AA /* reticle.png in Resources */ = {isa = PBXBuildFile; fileRef = 778FD048171B458100DE43AA /* reticle.png */; };
@@ -54,11 +54,11 @@
 		7735D68116E23F4600B5725E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7735D68216E23F4600B5725E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7735D68B16E23F4600B5725E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		7735D68D16E23F4600B5725E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7735D68E16E23F4600B5725E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7735D68D16E23F4600B5725E /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		7735D68E16E23F4600B5725E /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		7735D69516E24B0800B5725E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		776CBAD816E4CB0C007C19CF /* ViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController1.h; sourceTree = "<group>"; };
-		776CBAD916E4CB0C007C19CF /* ViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController1.m; sourceTree = "<group>"; };
+		776CBAD816E4CB0C007C19CF /* TrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackViewController.h; sourceTree = "<group>"; };
+		776CBAD916E4CB0C007C19CF /* TrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackViewController.m; sourceTree = "<group>"; };
 		778FD044171B3FEF00DE43AA /* logo7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo7.png; path = ../logo7.png; sourceTree = "<group>"; };
 		778FD046171B44CC00DE43AA /* map_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map_pin.png; path = "../../MapKit-Route-Directions-master/map_pin.png"; sourceTree = "<group>"; };
 		778FD048171B458100DE43AA /* reticle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reticle.png; path = "../../MapKit-Route-Directions-master/reticle.png"; sourceTree = "<group>"; };
@@ -119,12 +119,12 @@
 				7735D68116E23F4600B5725E /* AppDelegate.h */,
 				7735D68216E23F4600B5725E /* AppDelegate.m */,
 				7735D68A16E23F4600B5725E /* MainStoryboard.storyboard */,
-				7735D68D16E23F4600B5725E /* ViewController.h */,
-				7735D68E16E23F4600B5725E /* ViewController.m */,
+				7735D68D16E23F4600B5725E /* MapViewController.h */,
+				7735D68E16E23F4600B5725E /* MapViewController.m */,
 				7703AA141718ABD600B3EC91 /* PinClass.h */,
 				7703AA151718ABD600B3EC91 /* PinClass.m */,
-				776CBAD816E4CB0C007C19CF /* ViewController1.h */,
-				776CBAD916E4CB0C007C19CF /* ViewController1.m */,
+				776CBAD816E4CB0C007C19CF /* TrackViewController.h */,
+				776CBAD916E4CB0C007C19CF /* TrackViewController.m */,
 				7735D67916E23F4500B5725E /* Supporting Files */,
 			);
 			path = GPS;
@@ -219,8 +219,8 @@
 			files = (
 				7735D67F16E23F4600B5725E /* main.m in Sources */,
 				7735D68316E23F4600B5725E /* AppDelegate.m in Sources */,
-				7735D68F16E23F4600B5725E /* ViewController.m in Sources */,
-				776CBADA16E4CB0C007C19CF /* ViewController1.m in Sources */,
+				7735D68F16E23F4600B5725E /* MapViewController.m in Sources */,
+				776CBADA16E4CB0C007C19CF /* TrackViewController.m in Sources */,
 				7703AA161718ABD600B3EC91 /* PinClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

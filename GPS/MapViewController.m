@@ -6,16 +6,16 @@
 //  Copyright (c) 2013 Nasko. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MapViewController.h"
 #import "PinClass.h"
+#import "TrackViewController.h"
 
-
-@interface ViewController ()
+@interface MapViewController ()
 
 
 @end
 
-@implementation ViewController
+@implementation MapViewController
 
 
 -(IBAction)pinDrop {
@@ -101,10 +101,12 @@
     [mapView setRegion:region animated:YES];
     
     
+    
+    
     PinClass *ann = [[PinClass alloc] init];
     ann.coordinate = region.center;
     [mapView addAnnotation:ann];
-    
+     
 }
 
 -(void)routeTrack:(CLLocation *)startLocation atCurrent2DLocation:(CLLocation *)currentLocation {
@@ -160,11 +162,12 @@
         _routeLineView.lineCap = kCGLineCapSquare;
     }
     else {
+        _trackColor = 0;
         _routeLineView.fillColor = [UIColor purpleColor];
         _routeLineView.strokeColor = [UIColor purpleColor];
         _routeLineView.lineWidth = 5;
         _routeLineView.lineCap = kCGLineCapSquare;
-        _trackColor ++;
+        
     }
     
     overlayView = _routeLineView;
@@ -172,6 +175,16 @@
     return overlayView;
     
 }
+/*
+- (void)showRouteListView:(id)sender {
+	 *controller = [[RouteListViewController alloc] initWithStyle:UITableViewStyleGrouped];
+	controller.routes = diretions.routes;
+	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
+	[self presentModalViewController:navigationController animated:YES];
+	[controller release];
+	[navigationController release];
+}
+*/
 
 - (void)viewDidLoad
 {

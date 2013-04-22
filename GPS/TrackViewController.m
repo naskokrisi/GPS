@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 Nasko. All rights reserved.
 //
 
-#import "ViewController1.h"
-#import "ViewController.h"
+#import "TrackViewController.h"
+#import "MapViewController.h"
 
-@interface ViewController1 ()
+@interface TrackViewController ()
 
 @end
 
-@implementation ViewController1
+@implementation TrackViewController
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
