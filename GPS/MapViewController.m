@@ -191,9 +191,9 @@
     
     [super viewDidLoad];
     _trackColor = 0;
-    isPushed = FALSE;
+    isPushed = NO;
     _isRecording = NO;
-    location = TRUE;
+    location = YES;
     mapView.showsUserLocation = NO;
     mapView.delegate = self;
     locationManager = [[CLLocationManager alloc] init];

@@ -12,6 +12,7 @@
 @interface TrackViewController : UITableViewController {
     
 }
+- (IBAction)closeButtonTapped:(id)sender;
 
 
 @end
