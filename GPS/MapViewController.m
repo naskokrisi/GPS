@@ -125,6 +125,8 @@
     
     latitude = newLocation.coordinate.latitude;
     NSString *lat = [NSString stringWithFormat:@"%f",latitude];
+    
+    
     latLabel.text = lat;
     longitude = newLocation.coordinate.longitude;
     NSString *longt = [NSString stringWithFormat:@"%f",longitude];

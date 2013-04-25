@@ -102,7 +102,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Tracks" id="hS0-Dn-Iph">
                             <connections>
-                                <segue destination="bIp-r1-eOf" kind="modal" id="1Ni-cU-Rxg"/>
+                                <segue destination="HEQ-zd-YPe" kind="modal" id="V9k-1v-DTe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -150,18 +150,37 @@
                             <outlet property="delegate" destination="bIp-r1-eOf" id="rge-Ty-EYF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Tracks" id="t0E-Cs-yi8">
-                        <barButtonItem key="leftBarButtonItem" title="Close" id="FZr-Nh-UYY">
+                    <navigationItem key="navigationItem" title="Tracks" id="QDT-Td-0vf">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="laJ-t2-Sh5">
                             <connections>
-                                <action selector="closeButtonTapped:" destination="bIp-r1-eOf" id="jVb-el-KXr"/>
+                                <action selector="closeButtonTapped:" destination="bIp-r1-eOf" id="S9U-ML-aYI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WwG-U5-zzx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1125" y="-951"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5H4-5F-86I">
+            <objects>
+                <navigationController id="HEQ-zd-YPe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="dpe-GT-vdG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bIp-r1-eOf" kind="relationship" relationship="rootViewController" id="Riv-Hm-043"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bRc-oQ-OdB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="599" y="-951"/>
         </scene>
