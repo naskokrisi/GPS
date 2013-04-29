@@ -20,6 +20,7 @@
 
 -(IBAction)pinDrop {
     
+    dropPinColor = NO;
     [self makePin];
     
 }
@@ -28,6 +29,7 @@
     mapView.showsUserLocation = YES;
 
     if (isPushed == NO) {
+        dropPinColor = YES;
         isPushed = YES;
         [sender setTitle:@"Stop Track"];
         _startLocation = [[mapView userLocation] location];
@@ -36,6 +38,7 @@
         [self makePin];
     }
     else if (isPushed == YES) {
+        dropPinColor = YES;
         _trackColor ++;
         isPushed = NO;
         _stopLocation = [[mapView userLocation] location];
@@ -46,7 +49,7 @@
 }
 
 -(IBAction)myLocation:(id)sender {
-    mapView.showsUserLocation = YES;
+    self.mapView.showsUserLocation = YES;
     [mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
     if (location == YES) {
     location = NO;
@@ -92,21 +95,61 @@
 }
 @synthesize mapView;
 
+
 -(void)makePin {
-    MKCoordinateRegion region;
-    region.center.latitude = latitude;
-    region.center.longitude = longitude;
-    region.span.latitudeDelta = 0.01f;
-    region.span.longitudeDelta = 0.01f;
-    [mapView setRegion:region animated:YES];
+    
+    if (dropPinColor == NO) {
+        pinColor = YES;
+        latLabel.text = [NSString stringWithFormat:@"pin"];
+        MKCoordinateRegion region;
+        region.center.latitude = latitude;
+        region.center.longitude = longitude;
+        region.span.latitudeDelta = 0.01f;
+        region.span.longitudeDelta = 0.01f;
+        [mapView setRegion:region animated:YES];
+        
+        
+        PinClass *ann = [[PinClass alloc] init];
+        ann.coordinate = region.center;
+        
+        [mapView addAnnotation:ann];
+    }
+    
+    else if(pinColor == YES) {
+        pinColor = NO;
+        dropPinColor = NO;
+        latLabel.text = [NSString stringWithFormat:@"Start Track"];
+        MKCoordinateRegion region;
+        region.center.latitude = latitude;
+        region.center.longitude = longitude;
+        region.span.latitudeDelta = 0.01f;
+        region.span.longitudeDelta = 0.01f;
+        [mapView setRegion:region animated:YES];
     
     
+        PinClass *ann = [[PinClass alloc] init];
+        ann.coordinate = region.center;
+        [mapView addAnnotation:ann];
+    }
     
-    
-    PinClass *ann = [[PinClass alloc] init];
-    ann.coordinate = region.center;
-    [mapView addAnnotation:ann];
-     
+    else if(pinColor == NO) {
+        pinColor = YES;
+        dropPinColor = NO;
+        latLabel.text = [NSString stringWithFormat:@"Stop track"];
+        MKCoordinateRegion region;
+        region.center.latitude = latitude;
+        region.center.longitude = longitude;
+        region.span.latitudeDelta = 0.01f;
+        region.span.longitudeDelta = 0.01f;
+        [mapView setRegion:region animated:YES];
+        
+        
+        
+        PinClass *ann = [[PinClass alloc] init];
+        
+        ann.coordinate = region.center;
+        [mapView addAnnotation:ann];
+    }
 }
 
 -(void)routeTrack:(CLLocation *)startLocation atCurrent2DLocation:(CLLocation *)currentLocation {
@@ -192,6 +235,8 @@
 {
     
     [super viewDidLoad];
+    dropPinColor = NO;
+    pinColor = YES;
     _trackColor = 0;
     isPushed = NO;
     _isRecording = NO;

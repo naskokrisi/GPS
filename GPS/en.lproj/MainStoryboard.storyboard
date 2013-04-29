@@ -189,29 +189,6 @@
         <image name="map_pin.png" width="13" height="25"/>
         <image name="reticle.png" width="27" height="27"/>
     </resources>
-    <classes>
-        <class className="MapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="myLocation:"/>
-                <relationship kind="action" name="pinDrop"/>
-                <relationship kind="action" name="setMap:"/>
-                <relationship kind="action" name="startTrack:"/>
-                <relationship kind="outlet" name="latLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="longLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="TrackViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrackViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="closeButtonTapped:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

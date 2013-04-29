@@ -16,7 +16,9 @@
     CLLocationManager *locationManager;
     int _trackColor;
     bool location;
+    bool dropPinColor;
     bool isPushed;
+    bool pinColor;
     double longitude;
     double latitude;
     IBOutlet UILabel *latLabel;
