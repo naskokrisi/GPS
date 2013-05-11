@@ -54,9 +54,14 @@
 }
 
 -(IBAction)myLocation:(id)sender {
-    mapView.showsUserLocation = YES;
+    
+    MKCoordinateRegion regionUser;
+    regionUser.center.latitude = latitude;
+    regionUser.center.longitude = longitude;
+    regionUser.span.latitudeDelta = 0.01f;
+    regionUser.span.longitudeDelta = 0.01f;
+    [mapView setRegion:regionUser animated:YES];
     [mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
-     
 }
 
 -(IBAction)setMap:(id)sender {
