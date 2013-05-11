@@ -17,6 +17,7 @@
 		7735D68C16E23F4600B5725E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7735D68A16E23F4600B5725E /* MainStoryboard.storyboard */; };
 		7735D68F16E23F4600B5725E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7735D68E16E23F4600B5725E /* MapViewController.m */; };
 		7735D69616E24B0800B5725E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7735D69516E24B0800B5725E /* MapKit.framework */; };
+		77692266173405CA000F2FFB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77692265173405CA000F2FFB /* CoreData.framework */; };
 		776CBADA16E4CB0C007C19CF /* TrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 776CBAD916E4CB0C007C19CF /* TrackViewController.m */; };
 		778FD045171B3FEF00DE43AA /* logo7.png in Resources */ = {isa = PBXBuildFile; fileRef = 778FD044171B3FEF00DE43AA /* logo7.png */; };
 		778FD047171B44CC00DE43AA /* map_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 778FD046171B44CC00DE43AA /* map_pin.png */; };
@@ -57,6 +58,7 @@
 		7735D68D16E23F4600B5725E /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		7735D68E16E23F4600B5725E /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		7735D69516E24B0800B5725E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		77692265173405CA000F2FFB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		776CBAD816E4CB0C007C19CF /* TrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackViewController.h; sourceTree = "<group>"; };
 		776CBAD916E4CB0C007C19CF /* TrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackViewController.m; sourceTree = "<group>"; };
 		778FD044171B3FEF00DE43AA /* logo7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo7.png; path = ../logo7.png; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				7735D67716E23F4500B5725E /* CoreGraphics.framework in Frameworks */,
 				7735D69616E24B0800B5725E /* MapKit.framework in Frameworks */,
 				77AC345816EB3B21003AF842 /* CoreLocation.framework in Frameworks */,
+				77692266173405CA000F2FFB /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +107,7 @@
 		7735D67116E23F4500B5725E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				77692265173405CA000F2FFB /* CoreData.framework */,
 				77AC345716EB3B21003AF842 /* CoreLocation.framework */,
 				7735D69516E24B0800B5725E /* MapKit.framework */,
 				7735D67216E23F4500B5725E /* UIKit.framework */,
@@ -304,6 +308,10 @@
 		7735D69316E23F4600B5725E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GPS/World Map-Prefix.pch";
 				INFOPLIST_FILE = "GPS/World Map-Info.plist";
@@ -318,6 +326,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GPS/World Map-Prefix.pch";
 				INFOPLIST_FILE = "GPS/World Map-Info.plist";

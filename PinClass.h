@@ -8,13 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MKAnnotation.h>
+#import <MapKit/MKPinAnnotationView.h>
 
 @interface PinClass : NSObject <MKAnnotation> {
     
     CLLocationCoordinate2D coordinate;
+    MKPinAnnotationColor pinColor;
+    
     
 }
 
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
-
+@property (nonatomic) MKPinAnnotationColor pinColor;
+ 
 @end

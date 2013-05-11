@@ -25,7 +25,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w6H-nJ-K4U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-253" y="-951"/>
+            <point key="canvasLocation" x="-215" y="-769"/>
         </scene>
         <!--Map View Controller - Map-->
         <scene sceneID="5">
@@ -38,31 +38,13 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sB2-FB-rWw">
                                 <gestureRecognizers/>
                             </mapView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=":" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eu8-G9-BYh">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="234" id="D0p-FX-PPW"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=":" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1j-DM-R4N">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Eu8-G9-BYh" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="29" id="6yb-d6-wdy"/>
-                            <constraint firstItem="P1j-DM-R4N" firstAttribute="trailing" secondItem="Eu8-G9-BYh" secondAttribute="trailing" type="default" id="8sH-oQ-WBq"/>
                             <constraint firstItem="sB2-FB-rWw" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="Trj-SE-fRJ"/>
-                            <constraint firstItem="P1j-DM-R4N" firstAttribute="leading" secondItem="Eu8-G9-BYh" secondAttribute="leading" type="default" id="XYu-Qo-FV2"/>
                             <constraint firstItem="sB2-FB-rWw" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="biV-a4-wzj"/>
                             <constraint firstItem="sB2-FB-rWw" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="f6L-GR-tJD"/>
-                            <constraint firstItem="P1j-DM-R4N" firstAttribute="top" secondItem="Eu8-G9-BYh" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="hpe-tn-Dsw"/>
                             <constraint firstItem="sB2-FB-rWw" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="i68-EZ-Oug"/>
-                            <constraint firstItem="Eu8-G9-BYh" firstAttribute="top" secondItem="3" secondAttribute="top" constant="67" id="iE0-r1-gfK"/>
                         </constraints>
                     </view>
                     <toolbarItems>
@@ -110,14 +92,12 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
                     <connections>
-                        <outlet property="latLabel" destination="Eu8-G9-BYh" id="bk3-tN-fi7"/>
-                        <outlet property="longLabel" destination="P1j-DM-R4N" id="4NY-0V-SGn"/>
                         <outlet property="mapView" destination="sB2-FB-rWw" id="dk6-gZ-8Bc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="166" y="-951"/>
+            <point key="canvasLocation" x="204" y="-769"/>
         </scene>
         <!--Track View Controller - Tracks-->
         <scene sceneID="au8-6Y-TmL">
@@ -162,7 +142,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WwG-U5-zzx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1125" y="-951"/>
+            <point key="canvasLocation" x="1063" y="-769"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5H4-5F-86I">
@@ -182,7 +162,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRc-oQ-OdB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="599" y="-951"/>
+            <point key="canvasLocation" x="637" y="-769"/>
         </scene>
     </scenes>
     <resources>

@@ -10,7 +10,8 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MKReverseGeocoder.h>
-
+#import <CoreData/CoreData.h>
+#import <MapKit/MKPinAnnotationView.h>
 
 @interface MapViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, MKAnnotation>{
     CLLocationManager *locationManager;
@@ -18,21 +19,29 @@
     bool location;
     bool dropPinColor;
     bool isPushed;
-    bool pinColor;
+    bool myPinColor;
+    bool redColor;
+    bool greenColor;
+    bool purpleColor;
     double longitude;
     double latitude;
-    IBOutlet UILabel *latLabel;
-    IBOutlet UILabel *longLabel;
+    NSString *title;
     MKMapView *mapView;
     
+        
 }
 
+
+
+
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
+
 @property MKMapPoint * pointsArray;
 @property (retain) CLLocation *startLocation;
 @property (retain) CLLocation *stopLocation;
 @property BOOL isRecording;
 @property (retain) MKPolyline *routeLine;
+
 
 -(IBAction)startTrack:(id)sender;
 -(IBAction)myLocation:(id)sender;
