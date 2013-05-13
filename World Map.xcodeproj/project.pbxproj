@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		7703AA161718ABD600B3EC91 /* PinClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7703AA151718ABD600B3EC91 /* PinClass.m */; };
+		77082992173F8F7D00C18ACA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7735D67216E23F4500B5725E /* UIKit.framework */; };
+		77082993173F8F7D00C18ACA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7735D67416E23F4500B5725E /* Foundation.framework */; };
+		77082999173F8F7D00C18ACA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 77082997173F8F7D00C18ACA /* InfoPlist.strings */; };
+		7708299C173F8F7D00C18ACA /* Unit_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 7708299B173F8F7D00C18ACA /* Unit_Test.m */; };
+		770829A4173F916C00C18ACA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 770829A1173F904400C18ACA /* SenTestingKit.framework */; };
 		7735D67316E23F4500B5725E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7735D67216E23F4500B5725E /* UIKit.framework */; };
 		7735D67516E23F4500B5725E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7735D67416E23F4500B5725E /* Foundation.framework */; };
 		7735D67716E23F4500B5725E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7735D67616E23F4500B5725E /* CoreGraphics.framework */; };
@@ -44,6 +49,13 @@
 /* Begin PBXFileReference section */
 		7703AA141718ABD600B3EC91 /* PinClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PinClass.h; path = ../PinClass.h; sourceTree = "<group>"; };
 		7703AA151718ABD600B3EC91 /* PinClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PinClass.m; path = ../PinClass.m; sourceTree = "<group>"; };
+		7708298F173F8F7D00C18ACA /* Unit Test.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Test.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77082996173F8F7D00C18ACA /* Unit Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Unit Test-Info.plist"; sourceTree = "<group>"; };
+		77082998173F8F7D00C18ACA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7708299A173F8F7D00C18ACA /* Unit_Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Unit_Test.h; sourceTree = "<group>"; };
+		7708299B173F8F7D00C18ACA /* Unit_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Unit_Test.m; sourceTree = "<group>"; };
+		7708299D173F8F7D00C18ACA /* Unit Test-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Unit Test-Prefix.pch"; sourceTree = "<group>"; };
+		770829A1173F904400C18ACA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		7735D66F16E23F4500B5725E /* World Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "World Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7735D67216E23F4500B5725E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7735D67416E23F4500B5725E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -71,6 +83,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7708298B173F8F7D00C18ACA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				770829A4173F916C00C18ACA /* SenTestingKit.framework in Frameworks */,
+				77082992173F8F7D00C18ACA /* UIKit.framework in Frameworks */,
+				77082993173F8F7D00C18ACA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7735D66C16E23F4500B5725E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -87,10 +109,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		77082994173F8F7D00C18ACA /* Unit Test */ = {
+			isa = PBXGroup;
+			children = (
+				7708299A173F8F7D00C18ACA /* Unit_Test.h */,
+				7708299B173F8F7D00C18ACA /* Unit_Test.m */,
+				77082995173F8F7D00C18ACA /* Supporting Files */,
+			);
+			path = "Unit Test";
+			sourceTree = "<group>";
+		};
+		77082995173F8F7D00C18ACA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				77082996173F8F7D00C18ACA /* Unit Test-Info.plist */,
+				77082997173F8F7D00C18ACA /* InfoPlist.strings */,
+				7708299D173F8F7D00C18ACA /* Unit Test-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		7735D66616E23F4500B5725E = {
 			isa = PBXGroup;
 			children = (
 				7735D67816E23F4500B5725E /* GPS */,
+				77082994173F8F7D00C18ACA /* Unit Test */,
 				7735D67116E23F4500B5725E /* Frameworks */,
 				7735D67016E23F4500B5725E /* Products */,
 			);
@@ -100,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				7735D66F16E23F4500B5725E /* World Map.app */,
+				7708298F173F8F7D00C18ACA /* Unit Test.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,6 +157,7 @@
 				7735D67216E23F4500B5725E /* UIKit.framework */,
 				7735D67416E23F4500B5725E /* Foundation.framework */,
 				7735D67616E23F4500B5725E /* CoreGraphics.framework */,
+				770829A1173F904400C18ACA /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -154,6 +199,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7708298E173F8F7D00C18ACA /* Unit Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 770829A0173F8F7D00C18ACA /* Build configuration list for PBXNativeTarget "Unit Test" */;
+			buildPhases = (
+				7708298A173F8F7D00C18ACA /* Sources */,
+				7708298B173F8F7D00C18ACA /* Frameworks */,
+				7708298C173F8F7D00C18ACA /* Resources */,
+				7708298D173F8F7D00C18ACA /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Unit Test";
+			productName = "Unit Test";
+			productReference = 7708298F173F8F7D00C18ACA /* Unit Test.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		7735D66E16E23F4500B5725E /* World Map */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7735D69216E23F4600B5725E /* Build configuration list for PBXNativeTarget "World Map" */;
@@ -194,11 +257,20 @@
 			projectRoot = "";
 			targets = (
 				7735D66E16E23F4500B5725E /* World Map */,
+				7708298E173F8F7D00C18ACA /* Unit Test */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7708298C173F8F7D00C18ACA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77082999173F8F7D00C18ACA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7735D66D16E23F4500B5725E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,7 +288,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7708298D173F8F7D00C18ACA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		7708298A173F8F7D00C18ACA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7708299C173F8F7D00C18ACA /* Unit_Test.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7735D66B16E23F4500B5725E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -232,6 +328,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		77082997173F8F7D00C18ACA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77082998173F8F7D00C18ACA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		7735D67B16E23F4600B5725E /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -251,6 +355,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7708299E173F8F7D00C18ACA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Unit Test/Unit Test-Prefix.pch";
+				INFOPLIST_FILE = "Unit Test/Unit Test-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		7708299F173F8F7D00C18ACA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Unit Test/Unit Test-Prefix.pch";
+				INFOPLIST_FILE = "Unit Test/Unit Test-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 		7735D69016E23F4600B5725E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -342,6 +476,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		770829A0173F8F7D00C18ACA /* Build configuration list for PBXNativeTarget "Unit Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7708299E173F8F7D00C18ACA /* Debug */,
+				7708299F173F8F7D00C18ACA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		7735D66A16E23F4500B5725E /* Build configuration list for PBXProject "World Map" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
