@@ -7,6 +7,7 @@
 //
 
 #import "Unit_Test.h"
+#import "MapViewController.h"
 
 @implementation Unit_Test
 
@@ -24,9 +25,35 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testTrackColorZero
 {
-    STFail(@"Unit tests are not implemented yet in Unit Test");
+    MapViewController *mvc = [[MapViewController alloc] init];
+    STAssertEqualObjects([mvc colorForTrackInteger:0], [UIColor purpleColor], @"If the track integer is 0, the color should be purple.");
 }
+
+- (void)testTrackColorOne
+{
+    MapViewController *mvc = [[MapViewController alloc] init];
+    STAssertEqualObjects([mvc colorForTrackInteger:1], [UIColor blueColor], @"If the track integer is 1, the color should be blue.");
+}
+
+- (void)testTrackColorTwo
+{
+    MapViewController *mvc = [[MapViewController alloc] init];
+    STAssertEqualObjects([mvc colorForTrackInteger:2],[UIColor redColor], @"If the track integer is 2, the color should be red.");
+}
+
+- (void)testTrackColorTree
+{
+    MapViewController *mvc = [[MapViewController alloc] init];
+    STAssertEqualObjects([mvc colorForTrackInteger:3],[UIColor greenColor], @"If the track integer is 3, the color should be green.");
+}
+
+
+
+
+
+
+
 
 @end

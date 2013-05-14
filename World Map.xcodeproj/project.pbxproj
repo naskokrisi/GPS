@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7703AA161718ABD600B3EC91 /* PinClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7703AA151718ABD600B3EC91 /* PinClass.m */; };
+		77072B2C17424C6F00559911 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7735D68E16E23F4600B5725E /* MapViewController.m */; };
+		77072B3117424C7800559911 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7735D69516E24B0800B5725E /* MapKit.framework */; };
+		77072B3217424C8B00559911 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77AC345716EB3B21003AF842 /* CoreLocation.framework */; };
+		77072B3317424C9200559911 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77692265173405CA000F2FFB /* CoreData.framework */; };
 		77082992173F8F7D00C18ACA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7735D67216E23F4500B5725E /* UIKit.framework */; };
 		77082993173F8F7D00C18ACA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7735D67416E23F4500B5725E /* Foundation.framework */; };
 		77082999173F8F7D00C18ACA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 77082997173F8F7D00C18ACA /* InfoPlist.strings */; };
@@ -30,6 +34,7 @@
 		778FD04B171B49B900DE43AA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 778FD04A171B49B900DE43AA /* Default-568h@2x.png */; };
 		7792B20F171B38730080F993 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7792B20E171B38730080F993 /* Default.png */; };
 		7792B211171B38870080F993 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7792B210171B38870080F993 /* Default@2x.png */; };
+		779469F31742590C002A576E /* PinClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7703AA151718ABD600B3EC91 /* PinClass.m */; };
 		77AC345816EB3B21003AF842 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77AC345716EB3B21003AF842 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +50,16 @@
 			script = "# builtin-copyPlist\n";
 		};
 /* End PBXBuildRule section */
+
+/* Begin PBXContainerItemProxy section */
+		77072B2717424C6000559911 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7735D66716E23F4500B5725E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7735D66E16E23F4500B5725E;
+			remoteInfo = "World Map";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		7703AA141718ABD600B3EC91 /* PinClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PinClass.h; path = ../PinClass.h; sourceTree = "<group>"; };
@@ -87,6 +102,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77072B3317424C9200559911 /* CoreData.framework in Frameworks */,
+				77072B3217424C8B00559911 /* CoreLocation.framework in Frameworks */,
+				77072B3117424C7800559911 /* MapKit.framework in Frameworks */,
 				770829A4173F916C00C18ACA /* SenTestingKit.framework in Frameworks */,
 				77082992173F8F7D00C18ACA /* UIKit.framework in Frameworks */,
 				77082993173F8F7D00C18ACA /* Foundation.framework in Frameworks */,
@@ -211,6 +229,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				77072B2817424C6000559911 /* PBXTargetDependency */,
 			);
 			name = "Unit Test";
 			productName = "Unit Test";
@@ -309,6 +328,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				779469F31742590C002A576E /* PinClass.m in Sources */,
+				77072B2C17424C6F00559911 /* MapViewController.m in Sources */,
 				7708299C173F8F7D00C18ACA /* Unit_Test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +347,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		77072B2817424C6000559911 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7735D66E16E23F4500B5725E /* World Map */;
+			targetProxy = 77072B2717424C6000559911 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		77082997173F8F7D00C18ACA /* InfoPlist.strings */ = {
@@ -483,6 +512,7 @@
 				7708299F173F8F7D00C18ACA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7735D66A16E23F4500B5725E /* Build configuration list for PBXProject "World Map" */ = {
 			isa = XCConfigurationList;

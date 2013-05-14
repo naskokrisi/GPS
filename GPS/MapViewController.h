@@ -42,6 +42,7 @@
 @property BOOL isRecording;
 @property (retain) MKPolyline *routeLine;
 
+- (UIColor *)colorForTrackInteger:(NSInteger)trackColor;
 
 -(IBAction)startTrack:(id)sender;
 -(IBAction)myLocation:(id)sender;

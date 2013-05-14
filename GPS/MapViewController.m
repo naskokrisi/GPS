@@ -16,8 +16,8 @@
 @end
 
 @implementation MapViewController
-@synthesize mapView;
 
+@synthesize mapView;
 @synthesize coordinate;
 
 
@@ -64,6 +64,8 @@
     [mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
 }
 
+
+
 -(IBAction)setMap:(id)sender {
     switch (((UISegmentedControl *) sender).selectedSegmentIndex)
     {
@@ -86,7 +88,6 @@
 }
 
 
-
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 
 {
@@ -96,12 +97,13 @@
     if (pinView ==nil) {
         
         
-        
         pinView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"Pin"];
+        
+    
         if (redColor == YES) {
             pinView.pinColor = MKPinAnnotationColorRed;
             pinView.animatesDrop = YES;
-            
+
             redColor = NO;
             return pinView;
             
@@ -109,6 +111,7 @@
             pinView.pinColor = MKPinAnnotationColorGreen;
             pinView.animatesDrop = YES;
             greenColor = NO;
+            
             return pinView;
             
         } else if (purpleColor == YES) {
@@ -122,26 +125,29 @@
                 
     }
     
-    
     return 0;
     
 }
 
--(void)makePin {
+-(void)pinMaker {
+    MKCoordinateRegion region;
+    region.center.latitude = latitude;
+    region.center.longitude = longitude;
+    region.span.latitudeDelta = 0.01f;
+    region.span.longitudeDelta = 0.01f;
+    [mapView setRegion:region animated:YES];
     
+    PinClass *ann = [[PinClass alloc] init];
+    ann.coordinate = region.center;
+    [mapView addAnnotation:ann];
+
+}
+
+-(void)makePin {
 
     if (dropPinColor == NO) {
         purpleColor = YES;
-        MKCoordinateRegion region;
-        region.center.latitude = latitude;
-        region.center.longitude = longitude;
-        region.span.latitudeDelta = 0.01f;
-        region.span.longitudeDelta = 0.01f;
-        [mapView setRegion:region animated:YES];
-        
-        PinClass *ann = [[PinClass alloc] init];
-        ann.coordinate = region.center;
-        [mapView addAnnotation:ann];
+        [self pinMaker];
          
     }
     
@@ -149,16 +155,7 @@
         myPinColor = NO;
         dropPinColor = NO;
         greenColor = YES;
-        MKCoordinateRegion region;
-        region.center.latitude = latitude;
-        region.center.longitude = longitude;
-        region.span.latitudeDelta = 0.01f;
-        region.span.longitudeDelta = 0.01f;
-        [mapView setRegion:region animated:YES];
-    
-        PinClass *ann = [[PinClass alloc] init];
-        ann.coordinate = region.center;
-        [mapView addAnnotation:ann];
+        [self pinMaker];
         
     }
     
@@ -166,17 +163,9 @@
         myPinColor = YES;
         dropPinColor = NO;
         redColor = YES;
-        MKCoordinateRegion region;
-        region.center.latitude = latitude;
-        region.center.longitude = longitude;
-        region.span.latitudeDelta = 0.01f;
-        region.span.longitudeDelta = 0.01f;
-        [mapView setRegion:region animated:YES];
-        
-        PinClass *ann = [[PinClass alloc] init];
-        ann.coordinate = region.center;
-        [mapView addAnnotation:ann];
+        [self pinMaker];
     }
+    
 }
 
 -(void)routeTrack:(CLLocation *)startLocation atCurrent2DLocation:(CLLocation *)currentLocation {
@@ -202,39 +191,29 @@
 
 }
 
+- (UIColor *)colorForTrackInteger:(NSInteger)trackColor {
+    switch (trackColor) {
+        case 1:
+            return [UIColor blueColor];
+        case 2:
+            return [UIColor redColor];
+        case 3:
+            return [UIColor greenColor];
+        default:
+            return [UIColor purpleColor];
+    }
+}
+
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay
 {
     MKOverlayView* overlayView = nil;
     
     
     MKPolylineView  * _routeLineView = [[[MKPolylineView alloc] initWithPolyline:_routeLine] autorelease];
-    if(_trackColor == 1) {
-    _routeLineView.fillColor = [UIColor blueColor];
-    _routeLineView.strokeColor = [UIColor blueColor];
+    _routeLineView.fillColor = [self colorForTrackInteger:_trackColor];
+    _routeLineView.strokeColor = [self colorForTrackInteger:_trackColor];
     _routeLineView.lineWidth = 5;
     _routeLineView.lineCap = kCGLineCapSquare;
-    }
-    else if (_trackColor == 2) {
-        _routeLineView.fillColor = [UIColor redColor];
-        _routeLineView.strokeColor = [UIColor redColor];
-        _routeLineView.lineWidth = 5;
-        _routeLineView.lineCap = kCGLineCapSquare;
-    }
-    
-    else if (_trackColor == 3) {
-        _routeLineView.fillColor = [UIColor greenColor];
-        _routeLineView.strokeColor = [UIColor greenColor];
-        _routeLineView.lineWidth = 5;
-        _routeLineView.lineCap = kCGLineCapSquare;
-    }
-    else {
-        _trackColor = 0;
-        _routeLineView.fillColor = [UIColor purpleColor];
-        _routeLineView.strokeColor = [UIColor purpleColor];
-        _routeLineView.lineWidth = 5;
-        _routeLineView.lineCap = kCGLineCapSquare;
-        
-    }
     
     overlayView = _routeLineView;
     
@@ -247,8 +226,8 @@
     
     [super viewDidLoad];
     redColor = NO;
-    purpleColor = NO;
     greenColor = NO;
+    purpleColor = NO;
     dropPinColor = NO;
     myPinColor = YES;
     _trackColor = 0;
