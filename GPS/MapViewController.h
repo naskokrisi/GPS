@@ -28,7 +28,7 @@
     double latitude;
     NSString *title;
     MKMapView *mapView;
-
+    MKPinAnnotationView *myPinView;
         
 }
 
@@ -45,6 +45,7 @@
 
 - (UIColor *)colorForTrackInteger:(NSInteger)trackColor;
 -(MKOverlayView *)routeTrack:(CLLocation *)startLocation atCurrent2DLocation:(CLLocation *)currentLocation;
+
 
 -(IBAction)startTrack:(id)sender;
 -(IBAction)myLocation:(id)sender;

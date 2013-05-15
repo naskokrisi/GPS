@@ -87,10 +87,9 @@
     }
 }
 
-
--(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+-(MKAnnotationView *)mapView:(MKMapView *)mapView1 viewForAnnotation:(id<MKAnnotation>)annotation {
     
-    MKPinAnnotationView *pinView = (MKPinAnnotationView*) [mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
+    MKPinAnnotationView *pinView = (MKPinAnnotationView*) [mapView1 dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
         
     if (pinView ==nil) {
         
@@ -101,20 +100,26 @@
         if (redColor == YES) {
             pinView.pinColor = MKPinAnnotationColorRed;
             pinView.animatesDrop = YES;
+            _setPinColorTest = 1;
             redColor = NO;
+            myPinView = pinView;
             return pinView;
             
         } else if (greenColor == YES) {
             pinView.pinColor = MKPinAnnotationColorGreen;
             pinView.animatesDrop = YES;
+            _setPinColorTest = 2;
             greenColor = NO;
+            myPinView = pinView;
             return pinView;
             
         }  else if (purpleColor == YES) {
             pinView.pinColor = MKPinAnnotationColorPurple;
             pinView.animatesDrop = YES;
             pinView.draggable = YES;
+            _setPinColorTest = 3;
             purpleColor = NO;
+            myPinView = pinView;
             return pinView;
         }
         
@@ -225,6 +230,7 @@
 {
     
     [super viewDidLoad];
+    _setPinColorTest = 0;
     redColor = NO;
     greenColor = NO;
     purpleColor = NO;
