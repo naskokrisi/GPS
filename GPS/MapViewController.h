@@ -16,6 +16,7 @@
 @interface MapViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, MKAnnotation>{
     CLLocationManager *locationManager;
     int _trackColor;
+    int _setPinColorTest;
     bool location;
     bool dropPinColor;
     bool isPushed;
@@ -27,7 +28,7 @@
     double latitude;
     NSString *title;
     MKMapView *mapView;
-    
+
         
 }
 
@@ -43,6 +44,7 @@
 @property (retain) MKPolyline *routeLine;
 
 - (UIColor *)colorForTrackInteger:(NSInteger)trackColor;
+-(MKOverlayView *)routeTrack:(CLLocation *)startLocation atCurrent2DLocation:(CLLocation *)currentLocation;
 
 -(IBAction)startTrack:(id)sender;
 -(IBAction)myLocation:(id)sender;

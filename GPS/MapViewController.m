@@ -45,6 +45,7 @@
     else if (isPushed == YES) {
         dropPinColor = YES;
         _trackColor ++;
+        if(_trackColor == 4) _trackColor = 0;
         isPushed = NO;
         _stopLocation = [[mapView userLocation] location];
         _isRecording = NO;
@@ -63,7 +64,6 @@
     [mapView setRegion:regionUser animated:YES];
     [mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
 }
-
 
 
 -(IBAction)setMap:(id)sender {
@@ -88,12 +88,10 @@
 }
 
 
--(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
-
-{
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     
-    MKPinAnnotationView *pinView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
-    
+    MKPinAnnotationView *pinView = (MKPinAnnotationView*) [mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
+        
     if (pinView ==nil) {
         
         
@@ -103,7 +101,6 @@
         if (redColor == YES) {
             pinView.pinColor = MKPinAnnotationColorRed;
             pinView.animatesDrop = YES;
-
             redColor = NO;
             return pinView;
             
@@ -111,18 +108,16 @@
             pinView.pinColor = MKPinAnnotationColorGreen;
             pinView.animatesDrop = YES;
             greenColor = NO;
-            
             return pinView;
             
-        } else if (purpleColor == YES) {
+        }  else if (purpleColor == YES) {
             pinView.pinColor = MKPinAnnotationColorPurple;
             pinView.animatesDrop = YES;
             pinView.draggable = YES;
             purpleColor = NO;
-            
             return pinView;
         }
-                
+        
     }
     
     return 0;
@@ -168,13 +163,14 @@
     
 }
 
--(void)routeTrack:(CLLocation *)startLocation atCurrent2DLocation:(CLLocation *)currentLocation {
+-(MKOverlayView *)routeTrack:(CLLocation *)startLocation atCurrent2DLocation:(CLLocation *)currentLocation {
     _pointsArray[0]= MKMapPointForCoordinate(startLocation.coordinate);
     _pointsArray[1]= MKMapPointForCoordinate(currentLocation.coordinate);
     
     _routeLine = [MKPolyline polylineWithPoints:_pointsArray count:2];
     
-    [mapView addOverlay:_routeLine];  
+    [mapView addOverlay:_routeLine];
+    return 0;
 }
 
 - (void)locationManager:(CLLocationManager *)manager
@@ -193,14 +189,18 @@
 
 - (UIColor *)colorForTrackInteger:(NSInteger)trackColor {
     switch (trackColor) {
+        case 0:
+            return [UIColor purpleColor];
         case 1:
             return [UIColor blueColor];
         case 2:
             return [UIColor redColor];
         case 3:
             return [UIColor greenColor];
-        default:
-            return [UIColor purpleColor];
+            
+        default: 
+            return [UIColor blueColor];
+        
     }
 }
 

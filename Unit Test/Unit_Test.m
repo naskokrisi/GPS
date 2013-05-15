@@ -48,8 +48,11 @@
     MapViewController *mvc = [[MapViewController alloc] init];
     STAssertEqualObjects([mvc colorForTrackInteger:3],[UIColor greenColor], @"If the track integer is 3, the color should be green.");
 }
-
-
+- (void)testTrackColorFour
+{
+    MapViewController *mvc = [[MapViewController alloc] init];
+    STAssertEqualObjects([mvc colorForTrackInteger:4],[UIColor blueColor], @"If the track integer is 4, the color should be blue.");
+}
 
 
 
