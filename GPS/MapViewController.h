@@ -29,7 +29,7 @@
     NSString *title;
     MKMapView *mapView;
     MKPinAnnotationView *myPinView;
-    
+    MKPinAnnotationView *myPinViewTest;
     
         
 }
@@ -49,6 +49,7 @@
 -(MKOverlayView *)routeTrack:(CLLocation *)startLocation atCurrent2DLocation:(CLLocation *)currentLocation;
 -(MKPinAnnotationView *)pinCheck:(NSInteger)pinCount;
 -(MKPinAnnotationView *)pinCheckTest:(NSInteger)pinCountTest;
+-(MKAnnotationView *)mapView:(MKMapView *)mapView1 viewForAnnotation:(id<MKAnnotation>)annotation;
 -(BOOL)viewDidLoadTest:(NSInteger)count;
 
 

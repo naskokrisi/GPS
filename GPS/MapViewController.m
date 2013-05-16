@@ -12,15 +12,12 @@
 
 @interface MapViewController ()
 
-
 @end
 
 @implementation MapViewController
 
 @synthesize mapView;
 @synthesize coordinate;
-
-
 
 -(IBAction)pinDrop {
     
@@ -29,7 +26,6 @@
     [self makePin];
     
 }
-
 
 -(IBAction)startTrack:(UIBarButtonItem*)sender {
     mapView.showsUserLocation = YES;
@@ -109,31 +105,34 @@
             myPinView.draggable = YES;
             return myPinView;
         }
+        default:
+            return myPinView;
     }
-    return  0;
+
 }
 
 -(MKPinAnnotationView *)pinCheckTest:(NSInteger)pinCountTest {
     
     switch (pinCountTest) {
         case 1: {
-            myPinView.pinColor = MKPinAnnotationColorRed;
-            myPinView.animatesDrop = YES;
-            return myPinView;
+            myPinViewTest.pinColor = MKPinAnnotationColorRed;
+            myPinViewTest.animatesDrop = YES;
+            return myPinViewTest;
         }
         case 2: {
-            myPinView.pinColor = MKPinAnnotationColorGreen;
-            myPinView.animatesDrop = YES;
-            return myPinView;
+            myPinViewTest.pinColor = MKPinAnnotationColorGreen;
+            myPinViewTest.animatesDrop = YES;
+            return myPinViewTest;
         }
         case 3: {
-            myPinView.pinColor = MKPinAnnotationColorPurple;
-            myPinView.animatesDrop = YES;
-            myPinView.draggable = YES;
-            return myPinView;
+            myPinViewTest.pinColor = MKPinAnnotationColorPurple;
+            myPinViewTest.animatesDrop = YES;
+            myPinViewTest.draggable = YES;
+            return myPinViewTest;
         }
+        
     }
-    return  0;
+    return 0;
 }
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView1 viewForAnnotation:(id<MKAnnotation>)annotation {
@@ -143,27 +142,25 @@
     if (pinView ==nil) {
         
         
-        pinView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"Pin"];
-
+        myPinViewTest= [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"Pin"];
         
         if (redColor == YES) {
-            pinView.pinColor = MKPinAnnotationColorRed;
-            pinView.animatesDrop = YES;
+            [self pinCheckTest:1];
+            pinView = myPinViewTest;
             _setPinColorTest = 1;
             redColor = NO;
             return pinView;
             
         } else if (greenColor == YES) {
-            pinView.pinColor = MKPinAnnotationColorGreen;
-            pinView.animatesDrop = YES;
+            [self pinCheckTest:2];
+            pinView = myPinViewTest;
             _setPinColorTest = 2;
             greenColor = NO;
             return pinView;
             
         }  else if (purpleColor == YES) {
-            pinView.pinColor = MKPinAnnotationColorPurple;
-            pinView.animatesDrop = YES;
-            pinView.draggable = YES;
+            [self pinCheckTest:3];
+            pinView = myPinViewTest;
             _setPinColorTest = 3;
             purpleColor = NO;
             return pinView;
