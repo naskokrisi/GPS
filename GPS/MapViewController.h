@@ -29,7 +29,6 @@
     NSString *title;
     MKMapView *mapView;
     MKPinAnnotationView *myPinView;
-
     
     
         
@@ -50,6 +49,8 @@
 -(MKOverlayView *)routeTrack:(CLLocation *)startLocation atCurrent2DLocation:(CLLocation *)currentLocation;
 -(MKPinAnnotationView *)pinCheck:(NSInteger)pinCount;
 -(MKPinAnnotationView *)pinCheckTest:(NSInteger)pinCountTest;
+-(BOOL)viewDidLoadTest:(NSInteger)count;
+
 
 -(IBAction)startTrack:(id)sender;
 -(IBAction)myLocation:(id)sender;

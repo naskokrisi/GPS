@@ -73,6 +73,18 @@
     STAssertEqualObjects([mvc pinCheck:3], [mvc pinCheckTest:3], @"If the objects are equals, the pin color should be purple.");
 }
 
+-(void)testPinViewFour
+{
+    MapViewController *mvc = [[MapViewController alloc] init];
+    STAssertEqualObjects([mvc pinCheck:1], [mvc pinCheckTest:1], @"If the objects are equals, the pin color should be red.");
+}
+-(void)testViewDidLoad
+{
+    MapViewController *mvc = [[MapViewController alloc] init];
+    STAssertTrue([mvc viewDidLoadTest:0], @"All ViewDidLoad is loaded.");
+    
+}
+
 
 
 @end

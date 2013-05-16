@@ -272,27 +272,38 @@
     
 }
 
+-(BOOL)viewDidLoadTest:(NSInteger)count {
+    switch (count) {
+        case 0:
+            _setPinColorTest = 0;
+            redColor = NO;
+            greenColor = NO;
+            purpleColor = NO;
+            dropPinColor = NO;
+            myPinColor = YES;
+            _trackColor = 0;
+            isPushed = NO;
+            _isRecording = NO;
+            location = YES;
+            mapView.showsUserLocation = NO;
+            mapView.delegate = self;
+            locationManager = [[CLLocationManager alloc] init];
+            locationManager.delegate = self;
+            [locationManager startUpdatingLocation];
+            _pointsArray = malloc(sizeof(CLLocationCoordinate2D)*2);
+            return YES;
+            
+    }
+    
+    return 0;
+}
+
 - (void)viewDidLoad
 {
     
     [super viewDidLoad];
-    _setPinColorTest = 0;
-    redColor = NO;
-    greenColor = NO;
-    purpleColor = NO;
-    dropPinColor = NO;
-    myPinColor = YES;
-    _trackColor = 0;
-    isPushed = NO;
-    _isRecording = NO;
-    location = YES;
-    mapView.showsUserLocation = NO;
-    mapView.delegate = self;
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    [locationManager startUpdatingLocation];
-    _pointsArray = malloc(sizeof(CLLocationCoordinate2D)*2);
-    
+    [self viewDidLoadTest:0];
+
     
     
 }
