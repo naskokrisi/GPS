@@ -60,21 +60,18 @@
     STAssertEqualObjects([mvc pinCheck:1], MKPinAnnotationColorRed, @"If the objects are equals, the pin color should be red.");
    
 }
-/*
+
 -(void)testPinViewTwo
 {
     MapViewController *mvc = [[MapViewController alloc] init];
-    STAssertEqualObjects([mvc pinCheck:2], MKPinAnnotationColorGreen, @"If the objects are equals, the pin color should be green.");
-    
+    STAssertEqualObjects([mvc pinCheck:2], [mvc pinCheckTest:2], @"If the objects are equals, the pin color should be green.");
 }
+
 -(void)testPinViewTree
 {
     MapViewController *mvc = [[MapViewController alloc] init];
-    STAssertEqualObjects([mvc pinCheck:3], MKPinAnnotationColorPurple, @"If the objects are equals, the pin color should be purple.");
+    STAssertEqualObjects([mvc pinCheck:3], [mvc pinCheckTest:3], @"If the objects are equals, the pin color should be purple.");
 }
-*/
-
-
 
 
 

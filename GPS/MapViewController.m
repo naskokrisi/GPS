@@ -24,6 +24,7 @@
 
 -(IBAction)pinDrop {
     
+    _setPinColorTest = 3;
     dropPinColor = NO;
     [self makePin];
     
@@ -39,7 +40,7 @@
         [sender setTitle:@"Stop Track"];
         _startLocation = [[mapView userLocation] location];
         _isRecording = YES;
-        
+        _setPinColorTest = 2;
         [self makePin];
     }
     else if (isPushed == YES) {
@@ -49,6 +50,7 @@
         isPushed = NO;
         _stopLocation = [[mapView userLocation] location];
         _isRecording = NO;
+        _setPinColorTest = 1;
         [self makePin];
         [sender setTitle:@"Start Track"];
     }
@@ -91,25 +93,45 @@
 -(MKPinAnnotationView *)pinCheck:(NSInteger)pinCount {
     
     switch (pinCount) {
-        case 1:
-            if((myPinView.pinColor == MKPinAnnotationColorRed) && (myPinView.pinColor != MKPinAnnotationColorPurple) && (myPinView.pinColor != MKPinAnnotationColorGreen)) {
-                myPinView.pinColor = MKPinAnnotationColorGreen;
-                return myPinView;
-            }
-            else if (myPinView.pinColor != MKPinAnnotationColorRed)
-                return myPinView;
-        case 2: 
-            if((myPinView.pinColor == MKPinAnnotationColorGreen) && (myPinView.pinColor != MKPinAnnotationColorPurple) && (myPinView.pinColor != MKPinAnnotationColorRed))
-                return myPinView;
-            else if (myPinView.pinColor != MKPinAnnotationColorGreen)
-                return myPinView;
-        case 3:
-            if((myPinView.pinColor == MKPinAnnotationColorPurple) && (myPinView.pinColor != MKPinAnnotationColorRed) && (myPinView.pinColor != MKPinAnnotationColorGreen))
-                return myPinView;
-            else if (myPinView.pinColor != MKPinAnnotationColorPurple)
-                return myPinView;
-        
-        
+        case 1: {
+            myPinView.pinColor = MKPinAnnotationColorRed;
+            myPinView.animatesDrop = YES;
+            return myPinView;
+        }
+        case 2: {
+            myPinView.pinColor = MKPinAnnotationColorGreen;
+            myPinView.animatesDrop = YES;
+            return myPinView;
+        }
+        case 3: {
+            myPinView.pinColor = MKPinAnnotationColorPurple;
+            myPinView.animatesDrop = YES;
+            myPinView.draggable = YES;
+            return myPinView;
+        }
+    }
+    return  0;
+}
+
+-(MKPinAnnotationView *)pinCheckTest:(NSInteger)pinCountTest {
+    
+    switch (pinCountTest) {
+        case 1: {
+            myPinView.pinColor = MKPinAnnotationColorRed;
+            myPinView.animatesDrop = YES;
+            return myPinView;
+        }
+        case 2: {
+            myPinView.pinColor = MKPinAnnotationColorGreen;
+            myPinView.animatesDrop = YES;
+            return myPinView;
+        }
+        case 3: {
+            myPinView.pinColor = MKPinAnnotationColorPurple;
+            myPinView.animatesDrop = YES;
+            myPinView.draggable = YES;
+            return myPinView;
+        }
     }
     return  0;
 }
@@ -123,13 +145,12 @@
         
         pinView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"Pin"];
 
-    
+        
         if (redColor == YES) {
             pinView.pinColor = MKPinAnnotationColorRed;
             pinView.animatesDrop = YES;
             _setPinColorTest = 1;
             redColor = NO;
-            myPinView = pinView;
             return pinView;
             
         } else if (greenColor == YES) {
@@ -137,7 +158,6 @@
             pinView.animatesDrop = YES;
             _setPinColorTest = 2;
             greenColor = NO;
-            myPinView = pinView;
             return pinView;
             
         }  else if (purpleColor == YES) {
@@ -146,7 +166,6 @@
             pinView.draggable = YES;
             _setPinColorTest = 3;
             purpleColor = NO;
-            myPinView = pinView;
             return pinView;
         }
         
@@ -273,6 +292,7 @@
     locationManager.delegate = self;
     [locationManager startUpdatingLocation];
     _pointsArray = malloc(sizeof(CLLocationCoordinate2D)*2);
+    
     
     
 }

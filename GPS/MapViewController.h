@@ -49,6 +49,7 @@
 - (UIColor *)colorForTrackInteger:(NSInteger)trackColor;
 -(MKOverlayView *)routeTrack:(CLLocation *)startLocation atCurrent2DLocation:(CLLocation *)currentLocation;
 -(MKPinAnnotationView *)pinCheck:(NSInteger)pinCount;
+-(MKPinAnnotationView *)pinCheckTest:(NSInteger)pinCountTest;
 
 -(IBAction)startTrack:(id)sender;
 -(IBAction)myLocation:(id)sender;
