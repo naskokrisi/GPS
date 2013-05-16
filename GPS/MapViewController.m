@@ -87,6 +87,33 @@
     }
 }
 
+
+-(MKPinAnnotationView *)pinCheck:(NSInteger)pinCount {
+    
+    switch (pinCount) {
+        case 1:
+            if((myPinView.pinColor == MKPinAnnotationColorRed) && (myPinView.pinColor != MKPinAnnotationColorPurple) && (myPinView.pinColor != MKPinAnnotationColorGreen)) {
+                myPinView.pinColor = MKPinAnnotationColorGreen;
+                return myPinView;
+            }
+            else if (myPinView.pinColor != MKPinAnnotationColorRed)
+                return myPinView;
+        case 2: 
+            if((myPinView.pinColor == MKPinAnnotationColorGreen) && (myPinView.pinColor != MKPinAnnotationColorPurple) && (myPinView.pinColor != MKPinAnnotationColorRed))
+                return myPinView;
+            else if (myPinView.pinColor != MKPinAnnotationColorGreen)
+                return myPinView;
+        case 3:
+            if((myPinView.pinColor == MKPinAnnotationColorPurple) && (myPinView.pinColor != MKPinAnnotationColorRed) && (myPinView.pinColor != MKPinAnnotationColorGreen))
+                return myPinView;
+            else if (myPinView.pinColor != MKPinAnnotationColorPurple)
+                return myPinView;
+        
+        
+    }
+    return  0;
+}
+
 -(MKAnnotationView *)mapView:(MKMapView *)mapView1 viewForAnnotation:(id<MKAnnotation>)annotation {
     
     MKPinAnnotationView *pinView = (MKPinAnnotationView*) [mapView1 dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
@@ -95,7 +122,7 @@
         
         
         pinView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"Pin"];
-        
+
     
         if (redColor == YES) {
             pinView.pinColor = MKPinAnnotationColorRed;
