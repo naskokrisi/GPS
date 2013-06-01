@@ -20,10 +20,8 @@
 @property BOOL dropPinColor;
 @property int pinColorCheck;
 @property int trackColor;
-
 @property double latitude;
 @property double longitude;
-
 @property BOOL location;
 @property BOOL myPinColor;
 @property BOOL redColor;
@@ -32,7 +30,6 @@
 
 @property (nonatomic, retain) MKPinAnnotationView *myPinView;
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
-
 
 @property MKMapPoint * pointsArray;
 @property (retain) CLLocation *startLocation;
@@ -45,18 +42,8 @@
 -(MKPinAnnotationView *)pinChangeColor:(NSInteger)pinColorCount;
 -(MKAnnotationView *)mapView:(MKMapView *)mapView1 viewForAnnotation:(id<MKAnnotation>)annotation;
 
-
-
 -(IBAction)startTrack:(id)sender;
 -(IBAction)myLocation:(id)sender;
 -(IBAction)setMap:(id)sender;
 -(IBAction)pinDrop;
 @end
-
-/*
- {
- NSString *title;
- }
- 
- -(IBAction)getLocation;
-*/

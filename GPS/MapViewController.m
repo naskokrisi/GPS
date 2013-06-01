@@ -52,7 +52,6 @@
     [_mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
 }
 
-
 -(IBAction)setMap:(id)sender {
     switch (((UISegmentedControl *) sender).selectedSegmentIndex)
     {
@@ -73,8 +72,6 @@
         }
     }
 }
-
-
 
 # pragma mark - Pin Making
 
@@ -181,9 +178,7 @@
         }
         
     }
-    
     return 0;
-    
 }
 
 # pragma mark - Route Track Color
@@ -225,7 +220,6 @@
             
         default: 
             return [UIColor blueColor];
-        
     }
 }
 
@@ -269,11 +263,6 @@
     _locationManager.delegate = self;
     [_locationManager startUpdatingLocation];
     _pointsArray = malloc(sizeof(CLLocationCoordinate2D)*2);
-}
-
-- (void)dealloc {
-    [super dealloc];
-    free(_pointsArray);
 }
 
 @end
