@@ -16,35 +16,32 @@
 
 @implementation MapViewController
 
-@synthesize mapView;
-@synthesize coordinate;
-
 -(IBAction)pinDrop {
     
     _setPinColorTest = 3;
-    dropPinColor = NO;
+    _dropPinColor = NO;
     [self makePin];
     
 }
 
 -(IBAction)startTrack:(UIBarButtonItem*)sender {
-    mapView.showsUserLocation = YES;
+    _mapView.showsUserLocation = YES;
 
-    if (isPushed == NO) {
-        dropPinColor = YES;
-        isPushed = YES;
+    if (_isPushed == NO) {
+        _dropPinColor = YES;
+        _isPushed = YES;
         [sender setTitle:@"Stop Track"];
-        _startLocation = [[mapView userLocation] location];
+        _startLocation = [[_mapView userLocation] location];
         _isRecording = YES;
         _setPinColorTest = 2;
         [self makePin];
     }
-    else if (isPushed == YES) {
-        dropPinColor = YES;
+    else if (_isPushed == YES) {
+        _dropPinColor = YES;
         _trackColor ++;
         if(_trackColor == 4) _trackColor = 0;
-        isPushed = NO;
-        _stopLocation = [[mapView userLocation] location];
+        _isPushed = NO;
+        _stopLocation = [[_mapView userLocation] location];
         _isRecording = NO;
         _setPinColorTest = 1;
         [self makePin];
@@ -55,12 +52,12 @@
 -(IBAction)myLocation:(id)sender {
     
     MKCoordinateRegion regionUser;
-    regionUser.center.latitude = latitude;
-    regionUser.center.longitude = longitude;
+    regionUser.center.latitude = _latitude;
+    regionUser.center.longitude = _longitude;
     regionUser.span.latitudeDelta = 0.01f;
     regionUser.span.longitudeDelta = 0.01f;
-    [mapView setRegion:regionUser animated:YES];
-    [mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
+    [_mapView setRegion:regionUser animated:YES];
+    [_mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
 }
 
 
@@ -69,66 +66,40 @@
     {
     case 0:
         {
-            mapView.mapType = MKMapTypeStandard;
+            _mapView.mapType = MKMapTypeStandard;
             break;
         }
     case 1:
         {
-            mapView.mapType = MKMapTypeSatellite;
+            _mapView.mapType = MKMapTypeSatellite;
             break;
         }
     case 2:
         {
-            mapView.mapType = MKMapTypeHybrid;
+            _mapView.mapType = MKMapTypeHybrid;
             break;
         }
     }
-}
-
-
--(MKPinAnnotationView *)pinCheck:(NSInteger)pinCount {
-    
-    switch (pinCount) {
-        case 1: {
-            myPinView.pinColor = MKPinAnnotationColorRed;
-            myPinView.animatesDrop = YES;
-            return myPinView;
-        }
-        case 2: {
-            myPinView.pinColor = MKPinAnnotationColorGreen;
-            myPinView.animatesDrop = YES;
-            return myPinView;
-        }
-        case 3: {
-            myPinView.pinColor = MKPinAnnotationColorPurple;
-            myPinView.animatesDrop = YES;
-            myPinView.draggable = YES;
-            return myPinView;
-        }
-        default:
-            return myPinView;
-    }
-
 }
 
 -(MKPinAnnotationView *)pinCheckTest:(NSInteger)pinCountTest {
     
     switch (pinCountTest) {
         case 1: {
-            myPinViewTest.pinColor = MKPinAnnotationColorRed;
-            myPinViewTest.animatesDrop = YES;
-            return myPinViewTest;
+            _myPinViewTest.pinColor = MKPinAnnotationColorRed;
+            _myPinViewTest.animatesDrop = YES;
+            return _myPinViewTest;
         }
         case 2: {
-            myPinViewTest.pinColor = MKPinAnnotationColorGreen;
-            myPinViewTest.animatesDrop = YES;
-            return myPinViewTest;
+            _myPinViewTest.pinColor = MKPinAnnotationColorGreen;
+            _myPinViewTest.animatesDrop = YES;
+            return _myPinViewTest;
         }
         case 3: {
-            myPinViewTest.pinColor = MKPinAnnotationColorPurple;
-            myPinViewTest.animatesDrop = YES;
-            myPinViewTest.draggable = YES;
-            return myPinViewTest;
+            _myPinViewTest.pinColor = MKPinAnnotationColorPurple;
+            _myPinViewTest.animatesDrop = YES;
+            _myPinViewTest.draggable = YES;
+            return _myPinViewTest;
         }
         
     }
@@ -138,31 +109,31 @@
 -(MKAnnotationView *)mapView:(MKMapView *)mapView1 viewForAnnotation:(id<MKAnnotation>)annotation {
     
     MKPinAnnotationView *pinView = (MKPinAnnotationView*) [mapView1 dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
-        
+    
     if (pinView ==nil) {
         
         
-        myPinViewTest= [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"Pin"];
+        _myPinViewTest= [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"Pin"];
         
-        if (redColor == YES) {
+        if (_redColor == YES) {
             [self pinCheckTest:1];
-            pinView = myPinViewTest;
+            pinView = _myPinViewTest;
             _setPinColorTest = 1;
-            redColor = NO;
+            _redColor = NO;
             return pinView;
             
-        } else if (greenColor == YES) {
+        } else if (_greenColor == YES) {
             [self pinCheckTest:2];
-            pinView = myPinViewTest;
+            pinView = _myPinViewTest;
             _setPinColorTest = 2;
-            greenColor = NO;
+            _greenColor = NO;
             return pinView;
             
-        }  else if (purpleColor == YES) {
+        }  else if (_purpleColor == YES) {
             [self pinCheckTest:3];
-            pinView = myPinViewTest;
+            pinView = _myPinViewTest;
             _setPinColorTest = 3;
-            purpleColor = NO;
+            _purpleColor = NO;
             return pinView;
         }
         
@@ -172,40 +143,41 @@
     
 }
 
+
 -(void)pinMaker {
     MKCoordinateRegion region;
-    region.center.latitude = latitude;
-    region.center.longitude = longitude;
+    region.center.latitude = _latitude;
+    region.center.longitude = _longitude;
     region.span.latitudeDelta = 0.01f;
     region.span.longitudeDelta = 0.01f;
-    [mapView setRegion:region animated:YES];
+    [_mapView setRegion:region animated:YES];
     
     PinClass *ann = [[PinClass alloc] init];
     ann.coordinate = region.center;
-    [mapView addAnnotation:ann];
+    [_mapView addAnnotation:ann];
 
 }
 
 -(void)makePin {
 
-    if (dropPinColor == NO) {
-        purpleColor = YES;
+    if (_dropPinColor == NO) {
+        _purpleColor = YES;
         [self pinMaker];
          
     }
     
-    else if(myPinColor == YES) {
-        myPinColor = NO;
-        dropPinColor = NO;
-        greenColor = YES;
+    else if(_myPinColor == YES) {
+        _myPinColor = NO;
+        _dropPinColor = NO;
+        _greenColor = YES;
         [self pinMaker];
         
     }
     
-    else if(myPinColor == NO) {
-        myPinColor = YES;
-        dropPinColor = NO;
-        redColor = YES;
+    else if(_myPinColor == NO) {
+        _myPinColor = YES;
+        _dropPinColor = NO;
+        _redColor = YES;
         [self pinMaker];
     }
     
@@ -217,7 +189,7 @@
     
     _routeLine = [MKPolyline polylineWithPoints:_pointsArray count:2];
     
-    [mapView addOverlay:_routeLine];
+    [_mapView addOverlay:_routeLine];
     return 0;
 }
 
@@ -226,8 +198,8 @@
            fromLocation:(CLLocation *)oldLocation
 {
     
-    latitude = newLocation.coordinate.latitude;
-    longitude = newLocation.coordinate.longitude;
+    _latitude = newLocation.coordinate.latitude;
+    _longitude = newLocation.coordinate.longitude;
         
     if (_isRecording) {
         [self routeTrack:oldLocation atCurrent2DLocation:newLocation];
@@ -252,6 +224,8 @@
     }
 }
 
+# pragma mark - Map View Delegate
+
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay
 {
     MKOverlayView* overlayView = nil;
@@ -269,46 +243,27 @@
     
 }
 
--(BOOL)viewDidLoadTest:(NSInteger)count {
-    switch (count) {
-        case 0:
-            _setPinColorTest = 0;
-            redColor = NO;
-            greenColor = NO;
-            purpleColor = NO;
-            dropPinColor = NO;
-            myPinColor = YES;
-            _trackColor = 0;
-            isPushed = NO;
-            _isRecording = NO;
-            location = YES;
-            mapView.showsUserLocation = NO;
-            mapView.delegate = self;
-            locationManager = [[CLLocationManager alloc] init];
-            locationManager.delegate = self;
-            [locationManager startUpdatingLocation];
-            _pointsArray = malloc(sizeof(CLLocationCoordinate2D)*2);
-            return YES;
-            
-    }
-    
-    return 0;
-}
+# pragma mark - View Lifecycle
 
 - (void)viewDidLoad
 {
-    
     [super viewDidLoad];
-    [self viewDidLoadTest:0];
-
-    
-    
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    _setPinColorTest = 0;
+    _redColor = NO;
+    _greenColor = NO;
+    _purpleColor = NO;
+    _dropPinColor = NO;
+    _myPinColor = YES;
+    _trackColor = 0;
+    _isPushed = NO;
+    _isRecording = NO;
+    _location = YES;
+    _mapView.showsUserLocation = NO;
+    _mapView.delegate = self;
+    _locationManager = [[CLLocationManager alloc] init];
+    _locationManager.delegate = self;
+    [_locationManager startUpdatingLocation];
+    _pointsArray = malloc(sizeof(CLLocationCoordinate2D)*2);
 }
 
 - (void)dealloc {

@@ -13,31 +13,26 @@
 #import <CoreData/CoreData.h>
 #import <MapKit/MKPinAnnotationView.h>
 
-@interface MapViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, MKAnnotation>{
-    CLLocationManager *locationManager;
-    int _trackColor;
-    int _setPinColorTest;
-    bool location;
-    bool dropPinColor;
-    bool isPushed;
-    bool myPinColor;
-    bool redColor;
-    bool greenColor;
-    bool purpleColor;
-    double longitude;
-    double latitude;
-    NSString *title;
-    MKMapView *mapView;
-    MKPinAnnotationView *myPinView;
-    MKPinAnnotationView *myPinViewTest;
-    
-        
-}
+@interface MapViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, MKAnnotation>
 
+@property (nonatomic, retain) CLLocationManager *locationManager;
+@property BOOL isPushed;
+@property BOOL dropPinColor; // differentiate between start/stop and other cases
+@property int setPinColorTest; // holy mother of variable names - kur tate banica
+@property int trackColor;
 
+@property double latitude;
+@property double longitude;
 
+@property BOOL location;
+@property BOOL myPinColor;
+@property BOOL redColor;
+@property BOOL greenColor;
+@property BOOL purpleColor;
 
+@property (nonatomic, retain) MKPinAnnotationView *myPinViewTest;
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
+
 
 @property MKMapPoint * pointsArray;
 @property (retain) CLLocation *startLocation;
@@ -47,15 +42,21 @@
 
 - (UIColor *)colorForTrackInteger:(NSInteger)trackColor;
 -(MKOverlayView *)routeTrack:(CLLocation *)startLocation atCurrent2DLocation:(CLLocation *)currentLocation;
--(MKPinAnnotationView *)pinCheck:(NSInteger)pinCount;
 -(MKPinAnnotationView *)pinCheckTest:(NSInteger)pinCountTest;
 -(MKAnnotationView *)mapView:(MKMapView *)mapView1 viewForAnnotation:(id<MKAnnotation>)annotation;
--(BOOL)viewDidLoadTest:(NSInteger)count;
+
 
 
 -(IBAction)startTrack:(id)sender;
 -(IBAction)myLocation:(id)sender;
-//-(IBAction)getLocation;
 -(IBAction)setMap:(id)sender;
 -(IBAction)pinDrop;
 @end
+
+/*
+ {
+ NSString *title;
+ }
+ 
+ -(IBAction)getLocation;
+*/

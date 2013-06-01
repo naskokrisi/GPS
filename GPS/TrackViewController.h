@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 
 
-@interface TrackViewController : UITableViewController {
-    
-}
+@interface TrackViewController : UITableViewController
+
 - (IBAction)closeButtonTapped:(id)sender;
 
 

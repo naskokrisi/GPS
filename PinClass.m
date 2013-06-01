@@ -11,9 +11,5 @@
 
 
 @implementation PinClass
-    
-@synthesize coordinate;
-@synthesize pinColor;
-
 
 @end

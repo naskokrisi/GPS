@@ -54,37 +54,4 @@
     STAssertEqualObjects([mvc colorForTrackInteger:4],[UIColor blueColor], @"If the track integer is 4, the color should be blue.");
 }
 
--(void)testPinViewOne
-{
-    MapViewController *mvc = [[MapViewController alloc] init];
-    STAssertEqualObjects([mvc pinCheck:1], MKPinAnnotationColorRed, @"If the objects are equals, the pin color should be red.");
-   
-}
-
--(void)testPinViewTwo
-{
-    MapViewController *mvc = [[MapViewController alloc] init];
-    STAssertEqualObjects([mvc pinCheck:2], [mvc pinCheckTest:2], @"If the objects are equals, the pin color should be green.");
-}
-
--(void)testPinViewTree
-{
-    MapViewController *mvc = [[MapViewController alloc] init];
-    STAssertEqualObjects([mvc pinCheck:3], [mvc pinCheckTest:3], @"If the objects are equals, the pin color should be purple.");
-}
-
--(void)testPinViewFour
-{
-    MapViewController *mvc = [[MapViewController alloc] init];
-    STAssertEqualObjects([mvc pinCheck:1], [mvc pinCheckTest:1], @"If the objects are equals, the pin color should be red.");
-}
--(void)testViewDidLoad
-{
-    MapViewController *mvc = [[MapViewController alloc] init];
-    STAssertTrue([mvc viewDidLoadTest:0], @"All ViewDidLoad is loaded.");
-    
-}
-
-
-
 @end
