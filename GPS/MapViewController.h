@@ -17,8 +17,8 @@
 
 @property (nonatomic, retain) CLLocationManager *locationManager;
 @property BOOL isPushed;
-@property BOOL dropPinColor; // differentiate between start/stop and other cases
-@property int setPinColorTest; // holy mother of variable names - kur tate banica
+@property BOOL dropPinColor;
+@property int pinColorCheck;
 @property int trackColor;
 
 @property double latitude;
@@ -30,7 +30,7 @@
 @property BOOL greenColor;
 @property BOOL purpleColor;
 
-@property (nonatomic, retain) MKPinAnnotationView *myPinViewTest;
+@property (nonatomic, retain) MKPinAnnotationView *myPinView;
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
 
 
@@ -42,7 +42,7 @@
 
 - (UIColor *)colorForTrackInteger:(NSInteger)trackColor;
 -(MKOverlayView *)routeTrack:(CLLocation *)startLocation atCurrent2DLocation:(CLLocation *)currentLocation;
--(MKPinAnnotationView *)pinCheckTest:(NSInteger)pinCountTest;
+-(MKPinAnnotationView *)pinChangeColor:(NSInteger)pinColorCount;
 -(MKAnnotationView *)mapView:(MKMapView *)mapView1 viewForAnnotation:(id<MKAnnotation>)annotation;
 
 

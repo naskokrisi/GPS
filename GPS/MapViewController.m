@@ -16,14 +16,6 @@
 
 @implementation MapViewController
 
--(IBAction)pinDrop {
-    
-    _setPinColorTest = 3;
-    _dropPinColor = NO;
-    [self makePin];
-    
-}
-
 -(IBAction)startTrack:(UIBarButtonItem*)sender {
     _mapView.showsUserLocation = YES;
 
@@ -33,7 +25,7 @@
         [sender setTitle:@"Stop Track"];
         _startLocation = [[_mapView userLocation] location];
         _isRecording = YES;
-        _setPinColorTest = 2;
+        _pinColorCheck = 2;
         [self makePin];
     }
     else if (_isPushed == YES) {
@@ -43,7 +35,7 @@
         _isPushed = NO;
         _stopLocation = [[_mapView userLocation] location];
         _isRecording = NO;
-        _setPinColorTest = 1;
+        _pinColorCheck = 1;
         [self makePin];
         [sender setTitle:@"Start Track"];
     }
@@ -82,67 +74,17 @@
     }
 }
 
--(MKPinAnnotationView *)pinCheckTest:(NSInteger)pinCountTest {
-    
-    switch (pinCountTest) {
-        case 1: {
-            _myPinViewTest.pinColor = MKPinAnnotationColorRed;
-            _myPinViewTest.animatesDrop = YES;
-            return _myPinViewTest;
-        }
-        case 2: {
-            _myPinViewTest.pinColor = MKPinAnnotationColorGreen;
-            _myPinViewTest.animatesDrop = YES;
-            return _myPinViewTest;
-        }
-        case 3: {
-            _myPinViewTest.pinColor = MKPinAnnotationColorPurple;
-            _myPinViewTest.animatesDrop = YES;
-            _myPinViewTest.draggable = YES;
-            return _myPinViewTest;
-        }
-        
-    }
-    return 0;
-}
 
--(MKAnnotationView *)mapView:(MKMapView *)mapView1 viewForAnnotation:(id<MKAnnotation>)annotation {
+
+# pragma mark - Pin Making
+
+-(IBAction)pinDrop {
     
-    MKPinAnnotationView *pinView = (MKPinAnnotationView*) [mapView1 dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
-    
-    if (pinView ==nil) {
-        
-        
-        _myPinViewTest= [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"Pin"];
-        
-        if (_redColor == YES) {
-            [self pinCheckTest:1];
-            pinView = _myPinViewTest;
-            _setPinColorTest = 1;
-            _redColor = NO;
-            return pinView;
-            
-        } else if (_greenColor == YES) {
-            [self pinCheckTest:2];
-            pinView = _myPinViewTest;
-            _setPinColorTest = 2;
-            _greenColor = NO;
-            return pinView;
-            
-        }  else if (_purpleColor == YES) {
-            [self pinCheckTest:3];
-            pinView = _myPinViewTest;
-            _setPinColorTest = 3;
-            _purpleColor = NO;
-            return pinView;
-        }
-        
-    }
-    
-    return 0;
+    _pinColorCheck = 3;
+    _dropPinColor = NO;
+    [self makePin];
     
 }
-
 
 -(void)pinMaker {
     MKCoordinateRegion region;
@@ -182,6 +124,69 @@
     }
     
 }
+
+-(MKPinAnnotationView *)pinChangeColor:(NSInteger)pinColorCount {
+    
+    switch (pinColorCount) {
+        case 1: {
+            _myPinView.pinColor = MKPinAnnotationColorRed;
+            _myPinView.animatesDrop = YES;
+            return _myPinView;
+        }
+        case 2: {
+            _myPinView.pinColor = MKPinAnnotationColorGreen;
+            _myPinView.animatesDrop = YES;
+            return _myPinView;
+        }
+        case 3: {
+            _myPinView.pinColor = MKPinAnnotationColorPurple;
+            _myPinView.animatesDrop = YES;
+            _myPinView.draggable = YES;
+            return _myPinView;
+        }
+            
+    }
+    return 0;
+}
+
+-(MKAnnotationView *)mapView:(MKMapView *)mapView1 viewForAnnotation:(id<MKAnnotation>)annotation {
+    
+    MKPinAnnotationView *pinView = (MKPinAnnotationView*) [mapView1 dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
+    
+    if (pinView ==nil) {
+        
+        
+        _myPinView= [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"Pin"];
+        
+        if (_redColor == YES) {
+            [self pinChangeColor:1];
+            pinView = _myPinView;
+            _pinColorCheck = 1;
+            _redColor = NO;
+            return pinView;
+            
+        } else if (_greenColor == YES) {
+            [self pinChangeColor:2];
+            pinView = _myPinView;
+            _pinColorCheck = 2;
+            _greenColor = NO;
+            return pinView;
+            
+        }  else if (_purpleColor == YES) {
+            [self pinChangeColor:3];
+            pinView = _myPinView;
+            _pinColorCheck = 3;
+            _purpleColor = NO;
+            return pinView;
+        }
+        
+    }
+    
+    return 0;
+    
+}
+
+# pragma mark - Route Track Color
 
 -(MKOverlayView *)routeTrack:(CLLocation *)startLocation atCurrent2DLocation:(CLLocation *)currentLocation {
     _pointsArray[0]= MKMapPointForCoordinate(startLocation.coordinate);
@@ -248,7 +253,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _setPinColorTest = 0;
+    _pinColorCheck= 0;
     _redColor = NO;
     _greenColor = NO;
     _purpleColor = NO;
